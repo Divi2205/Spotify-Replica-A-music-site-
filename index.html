@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone - Music for Everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fab fa-spotify"></i>
+            <span>Spotify</span>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active">
+                    <a href="#home">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#search">
+                        <i class="fas fa-search"></i>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#library">
+                        <i class="fas fa-book"></i>
+                        <span>Your Library</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-actions">
+            <ul>
+                <li>
+                    <a href="#create">
+                        <i class="fas fa-plus-square"></i>
+                        <span>Create Playlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#liked">
+                        <i class="fas fa-heart"></i>
+                        <span>Liked Songs</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="playlists">
+            <div class="playlist-item">My Playlist #1</div>
+            <div class="playlist-item">Chill Vibes</div>
+            <div class="playlist-item">Workout Mix</div>
+            <div class="playlist-item">Party Hits</div>
+            <div class="playlist-item">Study Music</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="navigation-buttons">
+                <button class="nav-btn" id="prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn" id="next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="What do you want to listen to?">
+            </div>
+
+            <div class="user-actions">
+                <button class="btn-upgrade">Upgrade</button>
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>User</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main View -->
+        <div class="main-view">
+            <!-- Good Afternoon Section -->
+            <section class="greeting-section">
+                <h1 id="greeting">Good afternoon</h1>
+                
+                <div class="quick-playlists">
+                    <div class="quick-playlist-card" data-playlist="0">
+                        <div class="playlist-cover">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <span>Liked Songs</span>
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="quick-playlist-card" data-playlist="1">
+                        <div class="playlist-cover">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <span>Your Top Songs 2024</span>
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="quick-playlist-card" data-playlist="2">
+                        <div class="playlist-cover">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <span>Today's Top Hits</span>
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="quick-playlist-card" data-playlist="3">
+                        <div class="playlist-cover">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <span>Chill Hits</span>
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Made For You Section -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Made for You</h2>
+                    <a href="#" class="see-all">See all</a>
+                </div>
+                
+                <div class="cards-container" id="made-for-you">
+                    <!-- Cards will be dynamically generated -->
+                </div>
+            </section>
+
+            <!-- Recently Played Section -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Recently Played</h2>
+                    <a href="#" class="see-all">See all</a>
+                </div>
+                
+                <div class="cards-container" id="recently-played">
+                    <!-- Cards will be dynamically generated -->
+                </div>
+            </section>
+
+            <!-- Popular Playlists Section -->
+            <section class="section">
+                <div class="section-header">
+                    <h2>Popular Playlists</h2>
+                    <a href="#" class="see-all">See all</a>
+                </div>
+                
+                <div class="cards-container" id="popular-playlists">
+                    <!-- Cards will be dynamically generated -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <div class="player-left">
+            <div class="song-info">
+                <div class="song-cover">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="song-details">
+                    <div class="song-name">Song Name</div>
+                    <div class="artist-name">Artist Name</div>
+                </div>
+                <button class="like-button">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="player-center">
+            <div class="player-controls">
+                <button class="control-btn" id="shuffle-btn">
+                    <i class="fas fa-random"></i>
+                </button>
+                <button class="control-btn" id="prev-track-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="control-btn play-pause-btn" id="play-pause-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="control-btn" id="next-track-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button class="control-btn" id="repeat-btn">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+            
+            <div class="progress-bar-container">
+                <span class="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                    <div class="progress-handle"></div>
+                </div>
+                <span class="total-time">0:00</span>
+            </div>
+        </div>
+
+        <div class="player-right">
+            <button class="control-btn" id="queue-btn">
+                <i class="fas fa-list"></i>
+            </button>
+            <button class="control-btn" id="devices-btn">
+                <i class="fas fa-tv"></i>
+            </button>
+            <div class="volume-control">
+                <button class="control-btn" id="volume-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <div class="volume-bar">
+                    <div class="volume-fill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
